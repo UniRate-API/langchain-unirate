@@ -73,7 +73,10 @@ select = ["E", "F", "I", "B", "UP", "RUF"]
 python_version = "3.9"
 disallow_untyped_defs = true
 warn_redundant_casts = true
-warn_unused_ignores = true
+# warn_unused_ignores intentionally off: BaseTool's `args_schema` annotation
+# changed across langchain-core versions, so the one ignore in tool.py is
+# needed on some Python versions and redundant on others.
+warn_unused_ignores = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

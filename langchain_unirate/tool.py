@@ -59,7 +59,7 @@ class UniRateExchangeTool(BaseTool):
         "Input requires a source currency code, a target currency code, and "
         "an amount (defaults to 1)."
     )
-    args_schema: type[UniRateExchangeInput] = UniRateExchangeInput  # type: ignore[assignment]
+    args_schema: type[BaseModel] = UniRateExchangeInput  # type: ignore[assignment]
     api_wrapper: UniRateAPIWrapper
 
     def _run(
